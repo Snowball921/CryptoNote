@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>CryptoNote"</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<h1>Crypto</h1>
+<br>
+<h1>Note</h1>
+<body class="d-flex h-100 text-center text-white bg-dark">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main class="px-5">
+        <h1>Дневник торговли.</h1>
+        <p class="lead">Журнал прибыльных или убыточных торговых дней. </p>
+
+    </main>
+    <div th:each="el : ${post}" class="alert alert-info mt-2">
+        <h3 th:text="${el.title}"/>
+        <p th:text="${el.anons}"/>
+        <p th:text="${el.text}"/>
+
+    </div>
+    <div class = "container mt-5 mb-5">
+        <h1>Добавить отчет</h1>
+        <br>
+        <br>
+        <form action="/blog/add" method ="post">
+            <input type = "text" name="title" placeholder="Введите день" class="form-control"><br>
+            <input type = "text" name="anons" placeholder="Результат за день" class="form-control"><br>
+            <textarea name="text" placeholder="Описание поведения рынка" class="form-control"></textarea><br>
+            <button type = "submit" class="btn btn-success">Добавить отчет</button>
+        </form>
+
+    </div>
+    <p class="lead">
+        <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Вернуться на главную</a>
+    </p>
+    <style>
+    background-image: url(file:///D:/JAva/Project/cryptonote/bitcoin.jpg); }
+    </style>
+    <footer class="mt-auto text-white-50">
+        <p>Made by <a href="https://vk.com/fakiros/" class="text-white"> Petr Kurtov</a></a>.</p>
+    </footer>
+</div>
+</body>
+</body>
+
+
+
+
+
+<!--</body>
+<p th:text="'Привет, ' + ${title} + '!'" />
+</body> -->
+</html>
